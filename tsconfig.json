@@ -1,9 +1,30 @@
 {
   "compilerOptions": {
-    "lib": ["ESNext"],
-    "module": "esnext",
-    "target": "esnext",
-    // "bun-types" is the important part
-    "types": ["bun-types"]
-  }
+    "target": "es5",
+    "module": "ESNext",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "allowJs": true,
+    "jsx": "react",
+    "rootDir": "./",
+    "outDir": "./build",
+    "isolatedModules": true,
+
+    "sourceMap": true,
+    "strict": true,
+
+    "moduleResolution": "node",
+
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules", "build", "**/*.(spec|test).ts"],
+  "include": ["src/**/*.ts"]
 }
