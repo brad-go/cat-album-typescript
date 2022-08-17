@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.button {
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 0.6rem;
+  background-color: $primary;
+  font-size: $font-medium;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 0.1rem 0.1rem rgb(0, 0, 0, 0.2);
+  transition: all 0.05s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($primary, 10%);
+  }
+
+  &:active {
+    background-color: lighten($primary, 2%);
+    box-shadow: 0 0.2rem 0.4rem rgb(0, 0, 0, 0.1);
+  }
+}
+
+// .icon {
+// }
