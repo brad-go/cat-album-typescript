@@ -40,7 +40,31 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(jpg|png|svg|gif)$/i,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "public/assets/svgs/[name].[ext]?[hash]",
+          },
+        },
       },
     ],
   },
