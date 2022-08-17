@@ -7,8 +7,6 @@ import { INITIAL_CAT_IMAGE } from "./constants";
 
 import type { Target, Cat } from "~/types";
 
-import styles from "~/styles/global.module.scss";
-
 interface HomeState {
   catImage: Cat;
 }
@@ -21,11 +19,11 @@ class App extends Component {
     super();
 
     this.element = $target;
-    this.element.className = `${styles}`;
+    // this.element.className = `${styles}`;
 
     init(this.route);
     this.route();
-    this.fetchCatImages();
+    // this.fetchCatImages();
   }
 
   setState(nextState: { catImage: Cat }) {
