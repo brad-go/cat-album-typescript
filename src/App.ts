@@ -19,7 +19,6 @@ class App extends Component {
     super();
 
     this.element = $target;
-    // this.element.className = `${styles}`;
 
     init(this.route);
     this.route();
