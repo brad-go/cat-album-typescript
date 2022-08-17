@@ -2,7 +2,7 @@ import { Home } from "~/pages/home";
 import { Component } from "~/components";
 
 import { init } from "./router";
-
+import { getImageOfCats } from "~/api";
 import { INITIAL_CAT_IMAGE } from "./constants";
 
 import type { Target, Cat } from "~/types";
@@ -25,6 +25,7 @@ class App extends Component {
 
     init(this.route);
     this.route();
+    this.fetchCatImages();
   }
 
   setState(nextState: { catImage: Cat }) {
@@ -39,6 +40,16 @@ class App extends Component {
 
     if (pathname === "/") {
       new Home().render(this.element);
+    }
+  }
+
+  private async fetchCatImages() {
+    try {
+      const catImage = await getImageOfCats();
+
+      this.setState({ ...this.state, catImage });
+    } catch (e) {
+      throw new Error(`렌더링 실패 ${(e as Error).message}`);
     }
   }
 }
