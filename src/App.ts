@@ -1,14 +1,21 @@
-import Home from "~/pages/home/home";
+import { Home } from "~/pages/home";
 import { Component } from "~/components";
 
 import { init } from "./router";
 
-import type { Target } from "~/types";
+import { INITIAL_CAT_IMAGE } from "./constants";
+
+import type { Target, Cat } from "~/types";
 
 import styles from "~/styles/global.module.scss";
 
+interface HomeState {
+  catImage: Cat;
+}
+
 class App extends Component {
   readonly element: HTMLDivElement;
+  private state: HomeState = { catImage: INITIAL_CAT_IMAGE };
 
   constructor({ $target }: Target<HTMLDivElement>) {
     super();
@@ -20,7 +27,14 @@ class App extends Component {
     this.route();
   }
 
+  setState(nextState: { catImage: Cat }) {
+    this.state = nextState;
+    this.route();
+  }
+
   private route() {
+    this.element.innerHTML = "";
+
     const { pathname } = location;
 
     if (pathname === "/") {
