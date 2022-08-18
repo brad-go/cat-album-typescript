@@ -1,18 +1,21 @@
 {
   "env": {
     "browser": true,
+    "node": true,
     "esnext": true
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
     // Airbnb style guide 적용
     "airbnb-base",
     "airbnb-typescript/base",
     // Typescript ESLint 추천 스타일 적용
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
   ]
 }

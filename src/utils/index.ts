@@ -1,0 +1,1 @@
+export { debounceFrame } from "./debounceFrame";
