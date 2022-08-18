@@ -1,7 +1,7 @@
-import { debounceFrame } from "~/utils/debounceFrame";
+import { debounceFrame } from '~/utils/debounceFrame';
 
-import { root } from "./root";
-import { stateManager } from "./state";
+import { root } from './root';
+import { stateManager } from './state';
 
 export const render = debounceFrame(() => {
   const { element, container } = root;

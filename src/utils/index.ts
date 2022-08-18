@@ -1,1 +1,1 @@
-export { debounceFrame } from "./debounceFrame";
+export { debounceFrame } from './debounceFrame';

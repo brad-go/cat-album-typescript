@@ -1,8 +1,8 @@
-import { createRoot } from "~/core";
-import App from "./App";
+import { createRoot } from '~/core';
+import App from './App';
 
-import "~/styles/global.scss";
+import '~/styles/global.scss';
 
-const $target: HTMLDivElement = document.querySelector(".App")!;
+const $target: HTMLDivElement = document.querySelector('.App')!;
 
 createRoot(App, $target);
