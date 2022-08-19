@@ -1,11 +1,13 @@
+import type { Cat } from '~/types';
+
+import { getImageOfCats } from './api';
 import { useState, useEffect } from './core';
+import { INITIAL_CAT } from './constatns';
 
 import { Home } from './pages/home';
 
-import { getImageOfCats } from './api';
-
 const App = () => {
-  const [catImage, setCatImage] = useState({});
+  const [catImage, setCatImage] = useState<Cat>(INITIAL_CAT);
 
   const fetchCatImages = async () => {
     try {
