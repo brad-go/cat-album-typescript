@@ -16,7 +16,7 @@ export const useEvent = (
 
     if (element) {
       observer.disconnect();
-      element.addEventListener(event, () => callbackfn());
+      element.addEventListener(event, (e: Event) => callbackfn(e));
     }
   };
 
