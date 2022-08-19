@@ -18,12 +18,16 @@ const App = () => {
     }
   };
 
+  const handleClick = (e: MouseEvent) => {
+    fetchCatImages();
+  };
+
   useEffect(() => {
     fetchCatImages();
   }, []);
 
   return `
-    ${Home({ catImage })}
+    ${Home({ catImage, onClick: handleClick })}
   `;
 };
 
