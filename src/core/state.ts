@@ -10,21 +10,21 @@ export const stateManager: StateManager = {
   currentIndex: 0,
 };
 
-export const useState = (initialState: any) => {
+export const useState = <T>(initialState: T) => {
   const { states, currentIndex } = stateManager;
 
   if (states.length === currentIndex) states.push(initialState);
 
   const state = states[currentIndex];
 
-  const setState = (newState: any) => {
+  const setState = (newState: T) => {
     if (isEquivalent(state, newState)) return;
 
     states[currentIndex] = newState;
     render();
   };
 
-  const isEquivalent = (state: any, newState: any) => {
+  const isEquivalent = (state: T, newState: T) => {
     return JSON.stringify(state) === JSON.stringify(newState);
   };
 
