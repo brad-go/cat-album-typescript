@@ -4,7 +4,7 @@
  * @param callbackfn
  * @returns
  */
-export const debounceFrame = (callbackfn: (time: number) => void) => {
+export const debounceFrame = (callbackfn: () => void) => {
   let nextFrameCallback = -1;
 
   // 클로저를 이용하기 위해 debounce를 실행하면 함수를 반환한다.
