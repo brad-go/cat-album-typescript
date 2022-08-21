@@ -1,14 +1,19 @@
 const { API_KEY } = process.env;
-const API_END_POINT = "https://api.thecatapi.com/v1/images/search";
+const API_END_POINT = 'https://api.thecatapi.com/v1/images/search';
+
+export type ImageSize = 'small' | 'med' | 'full';
 
 /**
  * 랜덤으로 고양이의 사진을 가져오는 함수
  * @param limit - optional. 고양이 사진의 개수를 지정하는 매개변수. 없다면 한 장의 사진을 가져옴
  */
-export const getImageOfCats = async (limit?: number) => {
+export const getImageOfCats = async (
+  limit: number = 0,
+  size: ImageSize = 'med',
+) => {
   if (!limit) return await request(API_END_POINT);
 
-  let API_URL = API_END_POINT + `?limit=${limit}`;
+  let API_URL = API_END_POINT + `?limit=${limit}&size=${size}`;
   if (limit >= 10) API_URL += `&api_key=${API_KEY}`;
 
   return await request(API_URL);
@@ -21,7 +26,7 @@ export const getImageOfCats = async (limit?: number) => {
  */
 export const getImageOfCatsByBreeds = async (
   breeds: string,
-  limit?: number
+  limit?: number,
 ) => {
   let API_URL = API_END_POINT + `?breed_ids=${breeds}`;
   if (!limit) return await request(API_URL);
@@ -40,7 +45,7 @@ export const getImageOfCatsByBreeds = async (
 export const request = async (API_URL: string) => {
   try {
     const res = await fetch(API_URL);
-    if (!res.ok) throw new Error("서버에 문제가 있습니다!");
+    if (!res.ok) throw new Error('서버에 문제가 있습니다!');
     return await res.json();
   } catch (e) {
     throw new Error(`무언가 잘못 되었습니다! ${(e as Error).message}`);
