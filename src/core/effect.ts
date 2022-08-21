@@ -1,6 +1,6 @@
 import { stateManager } from './state';
 
-export const useEffect = (callbackfn: Function, deps: any[]) => {
+export const useEffect = (callbackfn: () => void, deps: any[]) => {
   const { states, currentIndex } = stateManager;
 
   let oldDeps = states[currentIndex];
@@ -9,6 +9,7 @@ export const useEffect = (callbackfn: Function, deps: any[]) => {
   if (oldDeps) {
     hasChanged = deps.some((d, index) => !Object.is(d, oldDeps[index]));
   }
+
   if (hasChanged) callbackfn();
 
   states[currentIndex] = deps;
