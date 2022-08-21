@@ -1,0 +1,21 @@
+@import '../../../../styles/variables';
+
+.pager {
+  display: flex;
+  align-items: center;
+  font-weight: $font-bold;
+  color: white;
+
+  img {
+    vertical-align: middle;
+  }
+}
+
+.current {
+  margin-left: 15px;
+}
+
+.total {
+  color: rgba(255, 255, 255, 0.4);
+  margin-right: 15px;
+}
