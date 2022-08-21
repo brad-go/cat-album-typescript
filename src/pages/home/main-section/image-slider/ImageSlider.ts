@@ -19,7 +19,7 @@ const ImageSlider = ({ images }: ImageSliderProps) => {
       if (images.length) {
         setCurrent((prev: number) => (prev + 1) % images.length);
       }
-    }, 3300);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [images, current]);
