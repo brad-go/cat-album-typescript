@@ -1,2 +1,2 @@
 export { debounceFrame } from './debounceFrame';
-export { removeWhiteSpaceOfString } from './string';
+export { removeWhiteSpaceOfString, fillZero } from './string';
