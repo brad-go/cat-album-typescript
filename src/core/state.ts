@@ -5,6 +5,10 @@ export interface StateManager {
   currentIndex: number;
 }
 
+export interface SetState<T> {
+  (state: T): T;
+}
+
 export const stateManager: StateManager = {
   states: [],
   currentIndex: 0,
@@ -17,7 +21,15 @@ export const useState = <T>(initialState: T) => {
 
   const state = states[currentIndex];
 
-  const setState = (newState: T) => {
+  const setState = (stateValue: T | SetState<T>) => {
+    let newState: T;
+
+    if (typeof stateValue === 'function') {
+      newState = (stateValue as SetState<T>)(state);
+    } else {
+      newState = stateValue;
+    }
+
     if (isEquivalent(state, newState)) return;
 
     states[currentIndex] = newState;
