@@ -1,0 +1,51 @@
+@import '../../../../styles/variables';
+
+.container {
+  width: inherit;
+  height: inherit;
+}
+
+.track {
+  position: relative;
+  height: inherit;
+  overflow: hidden;
+}
+
+.item {
+  position: relative;
+  float: left;
+  width: 100vw;
+  height: inherit;
+  margin: 0 auto;
+  z-index: 998;
+}
+
+.phrase {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transform: translateY(-50%);
+
+  p {
+    color: white;
+  }
+}
+
+.title {
+  margin-bottom: 2.5rem;
+  font-size: 6.875rem;
+  font-weight: $font-bold;
+  line-height: 1;
+}
+
+.content {
+  font-size: 1.875rem;
+}
+
+.text {
+  font-size: 3.75rem;
+  font-weight: $font-bold;
+  line-height: 1.6em;
+}
