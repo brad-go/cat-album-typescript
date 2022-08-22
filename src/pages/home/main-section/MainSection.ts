@@ -4,6 +4,7 @@ import { useEffect, useState } from '~/core';
 import { getImageOfCats } from '~/api';
 
 import ImageSlider from './image-slider';
+import PhraseSlider from './phrase-slider';
 import SliderNav from './slider-nav';
 
 import styles from './MainSection.module.scss';
@@ -16,7 +17,7 @@ const MainSection = () => {
 
   const fetchCatImages = async () => {
     try {
-      const images = await getImageOfCats(9, 'full');
+      const images = await getImageOfCats(5, 'full');
       setImages(images);
     } catch (e) {
       throw new Error(`${(e as Error).message}`);
@@ -49,6 +50,7 @@ const MainSection = () => {
   return `
     <div class=${styles.main}>
       ${ImageSlider({ images, current })}
+      ${PhraseSlider({ current, slideCount: images.length })}
       ${SliderNav({
         currentPage: current + 1,
         totalPage: images.length,
