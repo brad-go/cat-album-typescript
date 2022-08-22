@@ -5,19 +5,22 @@ import styles from './PhraseSlider.module.scss';
 interface PhraseItemProps {
   id: number;
   title: string;
-  content: string;
+  contents: string[];
 }
 
-const PhraseItem = ({ id, title, content }: PhraseItemProps) => {
+const PhraseItem = ({ id, title, contents }: PhraseItemProps) => {
   return `
     <div id=${id} class="${styles.item}">
       <div class=${styles.phrase}>
-        ${
-          id !== PHRASES.length
-            ? `<p class=${styles.title}>${title}</p>
-              <p class=${styles.content}>${content}</p>`
-            : `<p class=${styles.text}>${content}</p>`
-        }
+        <h3 class=${styles.title}>${title}</h3>
+        ${contents.map(
+          (content, idx) => `
+          <p class=${id === PHRASES.length ? styles.text : styles.content} 
+            style="animation-delay: ${(idx + 1) * 200}ms">
+            ${content}
+          </p>
+        `,
+        )}
       </div>
     </div>
   `;
