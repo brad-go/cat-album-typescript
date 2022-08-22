@@ -8,24 +8,11 @@ import SliderNav from './slider-nav';
 
 import styles from './MainSection.module.scss';
 
-const ref: { current: number | null } = { current: null };
-ref.current = 0;
+let timer: string | number | NodeJS.Timeout | undefined;
 
 const MainSection = () => {
   const [images, setImages] = useState<Cat[]>([]);
   const [current, setCurrent] = useState(0);
-
-  const movePrev = () => {
-    ref.current = (ref.current! < 1 ? images.length : ref.current) - 1;
-    setCurrent(ref.current);
-    // setCurrent((prev: number) => (prev < 1 ? images.length : prev) - 1);
-  };
-
-  const moveNext = () => {
-    ref.current = (ref.current! + 1) % images.length;
-    setCurrent(ref.current);
-    // setCurrent((prev: number) => (prev + 1) % images.length);
-  };
 
   const fetchCatImages = async () => {
     try {
@@ -36,24 +23,37 @@ const MainSection = () => {
     }
   };
 
+  const movePrev = () => {
+    setCurrent((prev: number) => (prev < 1 ? images.length : prev) - 1);
+    // 렌더링 될 때마다 타이머가 추가되므로 각 timer를 없애준다.
+    stopTimerInterval();
+  };
+
+  const moveNext = () => {
+    setCurrent((prev: number) => (prev + 1) % images.length);
+    stopTimerInterval();
+  };
+
+  const startTimerInterval = () => {
+    return setInterval(() => {
+      if (images.length) {
+        moveNext();
+      }
+    }, 3000);
+  };
+
+  const stopTimerInterval = () => {
+    clearInterval(timer);
+  };
+
   useEffect(() => {
     fetchCatImages();
   }, []);
 
   useEffect(() => {
-    // setIntreval이 아닌 setTimeout을 사용해야 해결이 가능했다.
-    const timer = setTimeout(() => {
-      // 리렌더링이 일어나면서 images를 아직 받아오지 못했다면 NaN이 current 값이 되므로
-      if (images.length) {
-        ref.current! = (ref.current! + 1) % images.length;
-        // setCurrent((prev: number) => (prev + 1) % images.length);
-        setCurrent(ref.current);
-        console.log(ref.current);
-      }
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, [images, current, setCurrent]);
+    // timer 시작
+    timer = startTimerInterval();
+  }, [images, current]);
 
   return `
     <div class=${styles.main}>
