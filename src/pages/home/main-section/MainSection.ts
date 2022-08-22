@@ -26,23 +26,11 @@ const MainSection = () => {
   const movePrev = () => {
     setCurrent((prev: number) => (prev < 1 ? images.length : prev) - 1);
     // 렌더링 될 때마다 타이머가 추가되므로 각 timer를 없애준다.
-    stopTimerInterval();
+    clearInterval(timer);
   };
 
   const moveNext = () => {
     setCurrent((prev: number) => (prev + 1) % images.length);
-    stopTimerInterval();
-  };
-
-  const startTimerInterval = () => {
-    return setInterval(() => {
-      if (images.length) {
-        moveNext();
-      }
-    }, 3000);
-  };
-
-  const stopTimerInterval = () => {
     clearInterval(timer);
   };
 
@@ -51,8 +39,11 @@ const MainSection = () => {
   }, []);
 
   useEffect(() => {
-    // timer 시작
-    timer = startTimerInterval();
+    timer = setInterval(() => {
+      if (images.length) {
+        moveNext();
+      }
+    }, 3000);
   }, [images, current]);
 
   return `
