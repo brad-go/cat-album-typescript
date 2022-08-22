@@ -1,4 +1,4 @@
-import { PHRASES } from '~/constatns/phrase';
+import { PHRASES } from '~/constatns';
 
 import PhraseItem from './PhraseItem';
 
