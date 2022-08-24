@@ -1,9 +1,11 @@
 .container {
+  position: relative;
   background-color: white;
   z-index: 1;
 }
 
 .progress {
+  position: absolute;
   top: 0;
   left: 0;
   width: 0%;
@@ -12,14 +14,5 @@
 
 .active {
   width: 100%;
-  animation: slide-in linear 3s;
-}
-
-@keyframes slide-in {
-  0% {
-    width: 0%;
-  }
-  100% {
-    height: 100%;
-  }
+  transition: all linear 3s;
 }
