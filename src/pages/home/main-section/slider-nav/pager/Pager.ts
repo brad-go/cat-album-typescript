@@ -8,8 +8,8 @@ import styles from './Pager.module.scss';
 interface PagerProps {
   currentPage: number;
   totalPage: number;
-  movePrev: (e: MouseEvent) => void;
-  moveNext: (e: MouseEvent) => void;
+  movePrev: (e: Event) => void;
+  moveNext: (e: Event) => void;
 }
 
 const Pager = ({ currentPage, totalPage, movePrev, moveNext }: PagerProps) => {

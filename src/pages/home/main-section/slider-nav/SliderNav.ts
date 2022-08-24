@@ -7,8 +7,8 @@ import styles from './SliderNav.module.scss';
 interface SliderNavProps {
   currentPage: number;
   totalPage: number;
-  movePrev: (e: MouseEvent) => void;
-  moveNext: (e: MouseEvent) => void;
+  movePrev: (e: Event) => void;
+  moveNext: (e: Event) => void;
 }
 
 const SliderNav = ({
@@ -23,7 +23,7 @@ const SliderNav = ({
         width: 235,
         height: 2,
         color: '#4876ef',
-        isActive: true,
+        currentPage,
       })}
       ${Pager({
         currentPage,

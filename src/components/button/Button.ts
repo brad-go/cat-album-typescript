@@ -1,4 +1,4 @@
-import { useEvent } from '~/core';
+import { useEffect, useEvent } from '~/core';
 
 import { removeWhiteSpaceOfString } from '~/utils';
 
@@ -6,7 +6,7 @@ import styles from './Button.module.scss';
 
 interface ButtonProps {
   children: string;
-  onClick: (e: MouseEvent) => void;
+  onClick: (e: Event) => void;
 }
 
 const Button = ({ children, onClick }: ButtonProps) => {

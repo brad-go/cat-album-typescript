@@ -7,19 +7,13 @@
 export const useEvent = (
   selector: string,
   event: keyof WindowEventMap,
-  callbackfn: Function,
+  callbackfn: (e: Event) => void,
 ) => {
-  const addEvent = () => {
-    const element: HTMLElement = document.querySelector(
-      `[data-event="${selector}"]`,
-    )!;
+  const element: HTMLElement | null = document.querySelector(
+    `[data-event="${selector}"]`,
+  );
 
-    if (element) {
-      observer.disconnect();
-      element.addEventListener(event, (e: Event) => callbackfn(e));
-    }
-  };
-
-  const observer = new MutationObserver(addEvent);
-  observer.observe(document.body, { subtree: true, childList: true });
+  if (element) {
+    element.addEventListener(event, callbackfn);
+  }
 };
