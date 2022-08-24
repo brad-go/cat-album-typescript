@@ -1,0 +1,74 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/animation.scss';
+
+.container {
+  width: inherit;
+  height: inherit;
+}
+
+.track {
+  position: relative;
+  height: inherit;
+  overflow: hidden;
+}
+
+.slide {
+  position: relative;
+  float: left;
+  height: inherit;
+  z-index: 998;
+}
+
+.imageWrapper {
+  width: inherit;
+  height: inherit;
+}
+
+.phrase {
+  position: absolute;
+  top: 6.875rem;
+  left: 8.125rem;
+  color: white;
+  z-index: 3;
+
+  button {
+    width: 8.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1.8rem;
+    font-weight: $font-bold;
+    color: white;
+    line-height: 3rem;
+  }
+
+  button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.title {
+  font-size: $font-large;
+  font-weight: $font-bold;
+  line-height: 1;
+}
+
+.content {
+  margin-top: 2.5rem;
+  margin-bottom: 5rem;
+  font-size: $font-medium;
+  font-weight: $font-bold;
+  line-height: 1.6rem;
+}
+
+button,
+.title,
+.content {
+  animation: none;
+}
+
+.active {
+  button,
+  .title,
+  .content {
+    @include fade-in(0.8s, ease);
+  }
+}
