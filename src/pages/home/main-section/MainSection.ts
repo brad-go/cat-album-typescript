@@ -48,7 +48,7 @@ const MainSection = () => {
   }, [images, current]);
 
   return `
-    <div class=${styles.main}>
+    <main class=${styles.main}>
       ${ImageSlider({ images, current })}
       ${PhraseSlider({ current, slideCount: images.length })}
       ${SliderNav({
@@ -57,7 +57,7 @@ const MainSection = () => {
         movePrev,
         moveNext,
       })}
-    </div>
+    </main>
     `;
 };
 
