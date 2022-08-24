@@ -7,15 +7,11 @@ interface SlideImageProps {
 }
 
 const SlideImage = ({ id, url, isActive }: SlideImageProps) => {
-  const setClassList = (isActive: boolean) => {
-    return isActive
-      ? `${styles.image} ${styles.active}`
-      : `${styles.image} ${styles.active} ${styles.hidden}`;
-  };
-
   return `
     <div id=${id} 
-      class="${setClassList(isActive)}" style="background-image: url(${url})">
+      class="${styles.image} ${styles.active} ${isActive ? '' : styles.hidden}" 
+      style="background-image: url(${url})"
+    >
     </div>`;
 };
 

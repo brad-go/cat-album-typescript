@@ -1,3 +1,5 @@
+@import '../../../../styles/animation.scss';
+
 .background {
   position: absolute;
   top: 0;
@@ -15,23 +17,15 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  transform: scale(1.15);
 }
 
 .active {
   opacity: 1;
-  animation: fade-out 5s linear;
+
+  @include fade-out(5s, linear);
 }
 
 .hidden {
   opacity: 0;
-}
-
-@keyframes fade-out {
-  0% {
-    transform: scale((1.15));
-  }
-  100% {
-    transform: scale(1);
-  }
+  animation: none;
 }
