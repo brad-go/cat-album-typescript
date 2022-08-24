@@ -1,4 +1,5 @@
 @import '../../../../styles/variables';
+@import '../../../../styles/animation';
 
 .container {
   width: inherit;
@@ -31,8 +32,15 @@
   p,
   h3 {
     color: white;
-    animation: fade-in 1s ease forwards;
     opacity: 0;
+    animation: none;
+  }
+}
+
+.active {
+  p,
+  h3 {
+    @include fade-in(1s, ease);
   }
 }
 
@@ -51,15 +59,4 @@
   font-size: 3.75rem;
   font-weight: $font-bold;
   line-height: 1.6em;
-}
-
-@keyframes fade-in {
-  0% {
-    transform: translateY(3.725rem);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }

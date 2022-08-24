@@ -27,7 +27,8 @@ const PhraseSlider = ({ current, slideCount }: PhraseSliderProps) => {
         "
       >
         ${PHRASES.map(
-          ({ id, title, contents }) => `${PhraseItem({ id, title, contents })}`,
+          ({ title, contents }, id) =>
+            `${PhraseItem({ id, title, contents, isActive: id === current })}`,
         ).join('')}
       </div>
     </div>
