@@ -12,7 +12,7 @@ const FactSection = () => {
       <header class=${styles.header}>
         <h2 class=${styles.title}>
           고양이는 사실 이런 동물입니다. <br />
-          알고계셨나요?
+          알고 계셨나요?
         </h2>
         <a href="#" class=${styles.more}>자세히 보기</a>
       </header>
