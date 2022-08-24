@@ -1,0 +1,54 @@
+@import '../../../../styles/animation.scss';
+
+.container {
+  position: absolute;
+  left: 8.125rem;
+  right: 8.125rem;
+  bottom: 3.125rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 0.438rem;
+  z-index: 1000;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 24%;
+  height: 1.25rem;
+  cursor: pointer;
+
+  &:hover {
+    .bar {
+      height: 0.376rem;
+      background-color: white;
+    }
+  }
+}
+
+.bar {
+  position: relative;
+  width: 100%;
+  height: 0.188rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: white;
+    animation: none;
+  }
+}
+
+.active {
+  &:before {
+    @include slide-in(5s, linear);
+  }
+}
