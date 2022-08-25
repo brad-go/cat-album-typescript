@@ -7,11 +7,11 @@ import ImageSlider from './image-slider';
 import PhraseSlider from './phrase-slider';
 import SliderNav from './slider-nav';
 
-import styles from './MainSection.module.scss';
+import styles from './Main.module.scss';
 
 let timer: string | number | NodeJS.Timeout | undefined;
 
-const MainSection = () => {
+const Main = () => {
   const [images, setImages] = useState<Cat[]>([]);
   const [current, setCurrent] = useState(0);
 
@@ -61,4 +61,4 @@ const MainSection = () => {
     `;
 };
 
-export default MainSection;
+export default Main;

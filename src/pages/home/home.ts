@@ -1,16 +1,18 @@
 import { Section } from '~/components';
 
-import MainSection from './main-section';
-import ServiceSection from './service-section';
-import FactSection from './fact-section';
+import Main from './main';
+import Service from './service';
+import Fact from './fact';
+import Breed from './breed';
 
 import styles from './Home.module.scss';
 
 const Home = () => {
   return `
-    ${MainSection()}
-    ${Section({ children: ServiceSection() })}
-    ${Section({ children: FactSection() })}
+    ${Main()}
+    ${Section({ children: Service(), color: 'light' })}
+    ${Section({ children: Fact(), color: 'light' })}
+    ${Section({ children: Breed(), color: 'dark' })}
   `;
 };
 

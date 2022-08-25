@@ -7,11 +7,11 @@ import { PHRASES } from '~/constatns';
 import Slider from './slider';
 import ProgressBar from './progress-bar';
 
-import styles from './ServiceSection.module.scss';
+import styles from './Service.module.scss';
 
 let timer: string | number | NodeJS.Timeout | undefined;
 
-const ServiceSection = () => {
+const Service = () => {
   const [cats, setCats] = useState<Cat[]>([]);
   const [slideIndex, setSlideIndex] = useState(0);
 
@@ -72,4 +72,4 @@ const ServiceSection = () => {
   `;
 };
 
-export default ServiceSection;
+export default Service;
