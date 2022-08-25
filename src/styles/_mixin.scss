@@ -1,7 +1,7 @@
-@import "./variables";
+@import './variables';
 
 @mixin mobile {
-  @media (min-width: #{$bp-mobile}) and (max-width: #{$bp-tablet - 1px}) {
+  @media (max-width: #{$bp-tablet - 1px}) {
     @content;
   }
 }
