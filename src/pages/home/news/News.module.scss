@@ -1,0 +1,24 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixin';
+
+.container {
+  margin-top: -3.125rem;
+  margin-left: 3.9%;
+  max-width: 99rem;
+}
+
+.header {
+  margin-right: 1rem;
+  margin-bottom: 6.25rem;
+  font-size: $font-large;
+  font-weight: $font-bold;
+  color: $black;
+  text-align: center;
+  letter-spacing: -0.03rem;
+  line-height: 1.4em;
+
+  @include mobile {
+    font-size: 1.875rem;
+    margin-bottom: 3.125rem;
+  }
+}
