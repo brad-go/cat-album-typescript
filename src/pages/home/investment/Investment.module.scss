@@ -1,0 +1,151 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixin';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 3.75rem;
+
+  button {
+    display: inline-block;
+    padding: 0 2.813rem 0 2.188rem;
+    border: 2px solid #ddd;
+    border-radius: 1.875rem;
+    font-size: $font-medium;
+    font-weight: $font-semi-bold;
+    background-image: url('https://www.saraminhr.co.kr/resources/image/main/small_arw.png');
+    background-position: center right 1.875rem;
+    background-repeat: no-repeat;
+    background-color: white;
+    line-height: 3rem;
+  }
+
+  @include tablet {
+    display: block;
+    margin: 0;
+
+    button {
+      margin-top: 2.5rem;
+    }
+  }
+
+  @include mobile {
+    display: block;
+    margin: 0;
+
+    button {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+.stock_data {
+  line-height: 1;
+}
+
+.stock_title {
+  display: inline-block;
+  margin-right: 3.75rem;
+
+  b {
+    position: relative;
+    margin-right: 0.625rem;
+    font-size: 2.5rem;
+    font-weight: $font-bold;
+    line-height: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -1.5rem;
+      left: 0;
+      display: block;
+      width: 2rem;
+      height: 1.25rem;
+      background-image: url('https://www.saraminhr.co.kr/resources/image/main/stock.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  span {
+    color: $gray;
+  }
+
+  @media screen and (max-width: 1589px) {
+    display: block;
+    margin-bottom: 2.5rem;
+    margin-right: 0;
+  }
+
+  @include mobile {
+    b {
+      font-size: 1.875rem;
+    }
+  }
+}
+
+.stock_price {
+  display: inline-block;
+  font-size: 1.875rem;
+
+  img {
+    width: inherit;
+    vertical-align: middle;
+  }
+
+  b {
+    margin: 0 0.625rem;
+    font-size: 3rem;
+    font-weight: $font-bold;
+    letter-spacing: -1px;
+  }
+
+  @include mobile {
+    b {
+      font-size: 2.188rem;
+      margin: 0 0.3rem;
+    }
+
+    font-size: $font-default;
+  }
+}
+
+.stock_compare {
+  font-size: $font-medium;
+  margin-left: 2.2rem;
+
+  img {
+    width: 1rem;
+    max-width: 100%;
+    margin-left: 0.625rem;
+    vertical-align: middle;
+  }
+
+  @include mobile {
+    font-size: $font-default;
+    margin-left: 1.25rem;
+  }
+}
+
+.red {
+  color: $red;
+  margin-left: 0.938rem;
+}
+
+.date {
+  display: inline-block;
+  margin-left: 0.938rem;
+  padding-left: 0.938rem;
+  border-left: 1px solid #ddd;
+  color: $gray;
+
+  @media screen and (max-width: 1199px) {
+    display: block;
+    margin-top: 1.25rem;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+  }
+}
