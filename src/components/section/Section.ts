@@ -9,7 +9,11 @@ interface SectionProps {
 
 const Section = ({ color, children }: SectionProps) => {
   return `
-    <section class="${styles.section} ${styles[color]}">${children}</section>
+    <section class="${styles.section} ${styles[color]}">
+      <div class="${styles.inner}">
+        ${children}
+      </div>
+    </section>
   `;
 };
 
