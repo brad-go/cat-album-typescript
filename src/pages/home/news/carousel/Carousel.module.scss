@@ -1,0 +1,103 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixin';
+
+.carousel_arrow {
+  position: absolute;
+  top: 4.125rem;
+  right: 3.75rem;
+  z-index: 9;
+
+  button {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    margin-left: 0.6rem;
+    border: 3px solid rgb(241, 240, 240);
+    border-radius: 50%;
+    background-image: url('https://www.saraminhr.co.kr/resources/image/main/news_arw.png');
+    background-repeat: no-repeat;
+    vertical-align: top;
+    text-indent: -9999em;
+    transition: all 0.3s;
+
+    &:hover {
+      border: 3px solid $gray;
+    }
+  }
+
+  button:nth-of-type(1) {
+    background-position: left -3px bottom 50%;
+  }
+
+  button:nth-of-type(2) {
+    background-position: right -3px bottom 50%;
+  }
+}
+
+.carousel {
+  position: relative;
+  width: inherit;
+  color: $black;
+  overflow: hidden;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.track {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.slide {
+  float: left;
+  margin-right: 3.75rem;
+}
+
+.section {
+  display: block;
+  height: 1.6rem;
+  font-weight: $font-semi-bold;
+}
+
+.slide:nth-child(1),
+.slide:nth-child(5),
+.slide:nth-child(9) {
+  .section {
+    color: #4876ef;
+  }
+}
+
+.title {
+  margin-top: 1.25rem;
+  margin-bottom: 4.375rem;
+  font-size: $font-medium;
+  font-weight: $font-semi-bold;
+}
+
+.text_overflow {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 3.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.6rem;
+}
+
+.bar {
+  width: 100%;
+  height: 0.2rem;
+  background-color: $black;
+}
+
+.date {
+  display: block;
+  font-size: 1.125rem;
+  margin-top: 3.125rem;
+  color: $gray;
+}
+
+.animated {
+  transition: all 0.3s linear;
+}
