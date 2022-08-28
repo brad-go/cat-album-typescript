@@ -1,8 +1,14 @@
+@import '../../../styles/mixin';
+
 .main {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 58.5rem;
   overflow: hidden;
   user-select: none;
   touch-action: pan-y;
+
+  @include mobile {
+    height: 100vh;
+  }
 }
