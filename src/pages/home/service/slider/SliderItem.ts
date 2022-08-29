@@ -34,7 +34,6 @@ const SliderItem = ({
         </div>
         ${Button({
           children: '자세히 보기',
-          // TODO: 필요시 구현
           onClick: () => (window.location.href = url),
         })}
       </div>

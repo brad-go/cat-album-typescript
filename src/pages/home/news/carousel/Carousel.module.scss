@@ -32,6 +32,11 @@
   button:nth-of-type(2) {
     background-position: right -3px bottom 50%;
   }
+
+  @include mobile {
+    top: 0;
+    right: 1.5rem;
+  }
 }
 
 .carousel {

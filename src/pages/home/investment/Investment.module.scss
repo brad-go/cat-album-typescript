@@ -101,15 +101,26 @@
     font-size: 3rem;
     font-weight: $font-bold;
     letter-spacing: -1px;
+    vertical-align: middle;
   }
 
   @include mobile {
+    font-size: $font-default;
+
     b {
       font-size: 2.188rem;
       margin: 0 0.3rem;
     }
 
-    font-size: $font-default;
+    img {
+      width: 0.75rem;
+    }
+  }
+
+  @media screen and (max-width: 568px) {
+    b {
+      font-size: 1.438rem;
+    }
   }
 }
 
@@ -127,12 +138,30 @@
   @include mobile {
     font-size: $font-default;
     margin-left: 1.25rem;
+
+    img {
+      max-width: 0.75rem;
+      margin-left: 0.313rem;
+    }
+  }
+
+  @media screen and (max-width: 568px) {
+    font-size: 0.938rem;
+    margin-left: 0.313rem;
   }
 }
 
 .red {
   color: $red;
   margin-left: 0.938rem;
+
+  @include mobile {
+    font-size: $font-default;
+  }
+
+  @media screen and (max-width: 568px) {
+    font-size: 0.938rem;
+  }
 }
 
 .date {
