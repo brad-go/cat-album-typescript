@@ -1,6 +1,6 @@
 import type { Cat } from '~/types';
 
-import { useState, useEffect } from '~/core';
+import { useState, useEffect, useScroll } from '~/core';
 import { getImageOfCats } from '~/api';
 import { PHRASES } from '~/constatns';
 
@@ -8,6 +8,7 @@ import Slider from './slider';
 import ProgressBar from './progress-bar';
 
 import styles from './Service.module.scss';
+import '~/styles/animation.scss';
 
 let timer: string | number | NodeJS.Timeout | undefined;
 
@@ -52,8 +53,10 @@ const Service = () => {
     }, 5000);
   }, [cats, slideIndex]);
 
+  useScroll('service');
+
   return `
-    <div class=${styles.container}>
+    <div class="${styles.container} ${styles.animated}" data-scroll="service">
       <header class=${styles.header}>
         <h2 class=${styles.title}>
           고양이는<br />

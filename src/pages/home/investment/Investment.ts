@@ -1,17 +1,24 @@
+import { useScroll } from '~/core';
 import { Image, Button } from '~/components';
 
 import styles from './Investment.module.scss';
+import '~/styles/animation.scss';
 
 export const ARROW_UP =
   'https://www.saraminhr.co.kr/resources/image/sub/up.png';
 
 const Investment = () => {
+  useScroll('investment');
+
   const handleClick = () => {
     console.log('not implementes...');
   };
 
   return `
-    <div class=${styles.container}>
+    <div 
+      class="${styles.container} ${styles.animated}" 
+      data-scroll="investment"
+    >
       <div class=${styles.stock_data}>
         <h4 class=${styles.stock_title}>
           <b>투자정보</b>

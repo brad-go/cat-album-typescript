@@ -1,16 +1,20 @@
+import { useScroll } from '~/core';
 import { FACTS } from '~/constatns/fact';
 
 import FactItem from './FactItem';
 
 import styles from './Fact.module.scss';
+import '~/styles/animation.scss';
 
 const Fact = () => {
+  useScroll('fact');
+
   const handleClick = (e: Event) => {
     console.log('not implemented...');
   };
 
   return `
-    <div class=${styles.container}>
+    <div class="${styles.container} ${styles.animated}" data-scroll="fact">
       <header class=${styles.header}>
         <h2 class=${styles.title}>
           고양이는 사실 이런 동물입니다. <br />

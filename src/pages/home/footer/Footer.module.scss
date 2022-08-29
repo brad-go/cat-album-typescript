@@ -1,5 +1,6 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixin';
+@import '../../../styles/animation';
 
 .footer {
   position: relative;
@@ -33,10 +34,9 @@
 .footer_dots {
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 3.90625%;
   width: 99.375rem;
   margin: 0 auto;
-  transform: translateX(-50%);
 
   div {
     position: absolute;
@@ -75,6 +75,7 @@
 
   @media screen and (max-width: 1589px) {
     width: 100%;
+    left: 0;
 
     div:first-child {
       left: 3.90625%;

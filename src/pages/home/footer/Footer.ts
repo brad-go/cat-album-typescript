@@ -1,15 +1,19 @@
-import { Image, Button } from '~/components';
+import { useScroll } from '~/core';
+import { Image } from '~/components';
 import { ICONS } from '~/constatns';
 
 import styles from './Footer.module.scss';
+import '~/styles/animation.scss';
 
 const Footer = () => {
+  useScroll('dots');
+
   return `
     <footer class=${styles.footer}>
       <div class=${
         styles.top_btn
       } onclick="window.scrollTo({top: 0, behavior: 'smooth'})"></div>
-      <div class=${styles.footer_dots}>
+      <div class="${styles.footer_dots} ${styles.animated}" data-scroll="dots">
         <div>cats</div>
         <div></div>
         <div></div> 

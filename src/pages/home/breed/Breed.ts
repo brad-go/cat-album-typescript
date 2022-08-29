@@ -1,12 +1,13 @@
 import type { Cat } from '~/types';
 
-import { useState, useEffect } from '~/core';
+import { useState, useEffect, useScroll } from '~/core';
 import { getImageOfCatsByBreeds } from '~/api';
 import { BREEDS } from '~/constatns';
 
 import BreedCard from './BreedCard';
 
 import styles from './Breed.module.scss';
+import '~/styles/animation.scss';
 
 interface CatBreeds extends Cat {
   title: string;
@@ -36,8 +37,10 @@ const Breed = () => {
     fetchCatImages();
   }, []);
 
+  useScroll('breed');
+
   return `
-    <div class=${styles.container}>
+    <div class="${styles.container} ${styles.animated}" data-scroll="breed">
       <h2 class=${styles.header}>CAT BREEDS</h2>
       <ul class=${styles.list}>
         ${cats
