@@ -1,0 +1,211 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixin';
+
+.footer {
+  position: relative;
+  padding-bottom: 8.125rem;
+  background-color: $background-footer;
+  color: white;
+
+  @media screen and (max-width: 640px) {
+    padding-bottom: 3.125rem;
+  }
+}
+
+.top_btn {
+  position: absolute;
+  top: 3.125rem;
+  right: 3.125rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  background-image: url('https://www.saraminhr.co.kr/resources/image/common/f_arw01.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 999;
+  cursor: pointer;
+
+  @media screen and (max-width: 640px) {
+    right: 1.875rem;
+  }
+}
+
+.footer_dots {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 99.375rem;
+  margin: 0 auto;
+  transform: translateX(-50%);
+
+  div {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #e7c988;
+  }
+
+  div:first-child {
+    top: -3.125rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8.5rem;
+    height: 8.5rem;
+    font-size: $font-medium-large;
+    font-weight: $font-bold;
+  }
+
+  div:nth-of-type(2) {
+    top: -2.5rem;
+    right: 3.90625%;
+    width: 4.68rem;
+    height: 4.68rem;
+  }
+
+  div:last-child {
+    top: 3.125rem;
+    right: 5rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    margin-right: 3.90625%;
+    background-color: transparent;
+    border: 4px solid #e7c988;
+  }
+
+  @media screen and (max-width: 1589px) {
+    width: 100%;
+
+    div:first-child {
+      left: 3.90625%;
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: 99.375rem;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1589px) {
+    width: auto;
+    margin-left: 3.90625%;
+    margin-right: 3.90625%;
+  }
+}
+
+.content {
+  display: flex;
+  padding-top: 7.5rem;
+
+  > * {
+    margin-right: 6.875rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: block;
+
+    > * {
+      display: inline-block;
+      margin-right: 2.5rem;
+      vertical-align: top;
+    }
+
+    > div:last-child {
+      display: block;
+      margin-top: 1.875rem;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    > * {
+      display: block;
+      margin-right: 0;
+    }
+  }
+}
+
+.policy {
+  li {
+    margin-bottom: 1.25rem;
+    font-weight: $font-semi-bold;
+  }
+}
+
+.contact_text {
+  li {
+    line-height: 1rem;
+    margin-bottom: 0.938rem;
+
+    b {
+      font-weight: $font-bold;
+      line-height: 1.6rem;
+    }
+
+    em {
+      display: block;
+      margin-top: 1.188rem;
+      margin-bottom: 0.938rem;
+      line-height: 1.6rem;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 0.938rem;
+  }
+}
+
+.contact_text_small {
+  font-size: 0.875rem;
+  font-weight: $font-semi-bold;
+  color: #d5c7ae;
+}
+
+.contact_icon {
+  margin-top: 1.75rem;
+  font-size: 0;
+
+  li {
+    display: inline-block;
+  }
+
+  img {
+    width: none;
+    height: none;
+    max-width: 100%;
+    margin-right: 0;
+    vertical-align: top;
+  }
+}
+
+.sns {
+  margin-right: 1.375rem;
+}
+
+.footer_right {
+  position: absolute;
+  top: 7.5rem;
+  right: 0;
+
+  p {
+    margin-bottom: 1.875rem;
+    font-size: 2rem;
+    font-weight: $font-bold;
+    line-height: 3.125rem;
+  }
+
+  @media screen and (max-width: 1589px) {
+    position: static;
+    margin-top: 1.875rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 1.688rem;
+    line-height: 1.5rem;
+  }
+}
+
+.copyright {
+  font-size: 0.875rem;
+}

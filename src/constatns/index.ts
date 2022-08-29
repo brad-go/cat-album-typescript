@@ -3,3 +3,4 @@ export { LEFT_ARROW, RIGHT_ARROW } from './arrow';
 export { PHRASES } from './phrase';
 export { BREEDS } from './breed';
 export { NEWS } from './news';
+export { FACEBOOK, INSTAGRAM, BLOG, YOUTUBE, ICONS } from './icon';
