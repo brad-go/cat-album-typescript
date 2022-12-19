@@ -18,7 +18,7 @@ const Main = () => {
   const fetchCatImages = async () => {
     try {
       const images = await getImageOfCats(5, 'full');
-      setImages(images);
+      setImages(images.slice(0, 5));
     } catch (e) {
       throw new Error(`${(e as Error).message}`);
     }

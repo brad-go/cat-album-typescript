@@ -19,7 +19,7 @@ const Service = () => {
   const fetchCatImages = async () => {
     try {
       const response = await getImageOfCats(4);
-      const newCats = response.map((res: Cat, index: number) => ({
+      const newCats = response.slice(0, 4).map((res: Cat, index: number) => ({
         ...res,
         title: PHRASES[index].title,
         contents: PHRASES[index].contents,
