@@ -1,6 +1,5 @@
 export const useScroll = (selector: string) => {
   const element = document.querySelector(`[data-scroll=${selector}]`)!;
-  // console.log(element);
 
   if (!element) return;
 
