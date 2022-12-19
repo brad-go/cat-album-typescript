@@ -8,7 +8,7 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '/build'),
+    path: path.resolve(__dirname, 'build'),
     // url 변경 시 오류 나는 것을 막아줌
     publicPath: '/',
     // 번들을 추출하기 전에 기존 build 디렉토리를 비워준다.

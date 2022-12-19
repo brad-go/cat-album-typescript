@@ -6,7 +6,7 @@
     "allowJs": true,
     "jsx": "react",
     "rootDir": "./",
-    "outDir": "./build",
+    "outDir": "./build/",
     "isolatedModules": true,
 
     "sourceMap": true,
