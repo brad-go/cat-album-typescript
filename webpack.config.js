@@ -72,6 +72,7 @@ module.exports = {
     // 이 옵션 없이 사용하면 빌드 시 개발한 것이 적용되지 않는다. 기존에 만들어둔 파일을 기반으로 html을 만들어준다.
     new HtmlWebpackPlugin({
       template: './public/index.html',
+      favicon: './public/favicon.ico',
     }),
     new MiniCssExtractPlugin({
       filename: 'style.css',
