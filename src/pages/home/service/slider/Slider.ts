@@ -9,7 +9,7 @@ interface SliderProps {
 }
 
 const Slider = ({ slideIndex, totalSlide, items }: SliderProps) => {
-  const PADDING = 95;
+  const PADDING = 80;
   const SLIDE_WIDTH = window.innerWidth - PADDING;
 
   const getTrackWidth = (totalSlide: number) => {
@@ -33,6 +33,7 @@ const Slider = ({ slideIndex, totalSlide, items }: SliderProps) => {
               title,
               contents,
               url,
+              slideWidth: SLIDE_WIDTH,
               isActive: id === slideIndex,
             }),
           )

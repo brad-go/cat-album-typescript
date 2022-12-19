@@ -7,6 +7,7 @@ export interface SliderItemProps {
   title: string;
   contents: string[];
   url: string;
+  slideWidth: number;
   isActive: boolean;
 }
 
@@ -15,15 +16,11 @@ const SliderItem = ({
   title,
   contents,
   url,
+  slideWidth,
   isActive,
 }: SliderItemProps) => {
-  const getSlideWidth = () => {
-    const PADDING = 95;
-    return window.innerWidth - PADDING;
-  };
-
   return `
-    <div id=${id} class="${styles.slide}" style="width: ${getSlideWidth()}px">
+    <div id=${id} class="${styles.slide}" style="width: ${slideWidth}px">
       <div class=${styles.imageWrapper}>
         ${Image({ src: url, alt: `slide ${id}` })}
       </div>
