@@ -5,7 +5,7 @@ import styles from './Investment.module.scss';
 import '~/styles/animation.scss';
 
 export const ARROW_UP =
-  'https://www.saraminhr.co.kr/resources/image/sub/up.png';
+  'https://www.saramincorp.co.kr/resources/image/sub/up.png';
 
 const Investment = () => {
   useScroll('investment');
